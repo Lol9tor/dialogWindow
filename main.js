@@ -8,9 +8,7 @@ window.onload = function (){
     var img = document.getElementById("close");
     img.onclick = deleteFrame;
 
-
     var head = document.getElementById('head');
-
     head.onmousedown = function(e) {
         document.body.onselectstart = function() {
             return false
@@ -31,10 +29,7 @@ window.onload = function (){
             self.style.top = e.pageY - shiftY+ 'px';
         }
 
-        self.style.position = 'absolute';
-        //document.body.appendChild(self);
         moveAt(e);
-
         self.style.zIndex = 1000; // above another elements
 
         document.onmousemove = function(e) {
@@ -54,6 +49,7 @@ window.onload = function (){
     };
 
 };
+
 
 function showHideFrame(){
     var frame = document.getElementById("frame");
@@ -98,14 +94,14 @@ function showFrame() {
 
 function deleteFrame() {
     var frame = document.getElementById("frame");
-    var close = confirm("Delete this window?");
+    var close = confirm("Close this window?");
     var btn = document.getElementById("showHide");
     if (close) {
         hideFrame();
         setTimeout(function(){
             frame.parentNode.removeChild(frame);
             btn.disabled = true;
-        }, 1300);
+        }, 1350);
     }
 }
 
