@@ -2,7 +2,7 @@ window.onload = function (){
     var btn = document.getElementById("showHide");
     var frame = document.getElementById("frame");
     frame.originHeight = frame.clientHeight;
-
+    btn.disabled = false;
     btn.onclick = showHideFrame;
 
     var img = document.getElementById("close");
@@ -101,7 +101,7 @@ function deleteFrame() {
         setTimeout(function(){
             frame.parentNode.removeChild(frame);
             btn.disabled = true;
-        }, 1350);
+        }, 1400);
     }
 }
 
